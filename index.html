@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriella Radicchi | Product Owner Sprint</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         :root {
             /* Tema Escuro (Tech) */
@@ -44,22 +44,22 @@
             overflow: hidden;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
-        
+
         /* Estilos de Tema */
         .theme-dark { background-color: var(--bg-dark); color: var(--text-primary-dark); }
         .theme-light { background-color: var(--bg-light); color: var(--text-primary-light); }
 
         .fade-in { animation: fadeIn 0.8s ease-out forwards; }
         .fade-out { animation: fadeOut 0.5s ease-in forwards; }
-        
+
         .user-story-card { transition: all 0.3s ease; cursor: pointer; text-align: center; }
         .theme-dark .user-story-card { background-color: var(--surface-dark); border: 1px solid var(--border-dark); }
         .theme-light .user-story-card { background-color: var(--surface-light); border: 1px solid var(--border-light); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .theme-dark .user-story-card:hover { border-color: var(--accent-dark); transform: translateY(-5px); box-shadow: 0 0 15px var(--accent-glow-dark); }
         .theme-light .user-story-card:hover { border-color: var(--accent-light); transform: translateY(-5px); box-shadow: 0 0 15px var(--accent-glow-light); }
-        
-        .sprint-backlog { 
-            transition: all 0.5s ease; 
+
+        .sprint-backlog {
+            transition: all 0.5s ease;
             position: absolute;
             top: 0;
             left: 0;
@@ -80,16 +80,16 @@
 
         .theme-dark .sprint-backlog { background-color: var(--surface-dark); border-right: 1px solid var(--border-dark); }
         .theme-light .sprint-backlog { background-color: var(--surface-light); border-right: 1px solid var(--border-light); }
-        
+
         .backlog-item { border-left: 3px solid transparent; width: 100%; text-align: left; }
         .theme-dark .backlog-item.active { border-left-color: var(--accent-dark); background-color: rgba(147, 51, 234, 0.05); }
         .theme-light .backlog-item.active { border-left-color: var(--accent-light); background-color: #f5f3ff; }
-        
+
         .content-area { overflow: auto; }
         #carousel-slides-container { overflow: auto; }
         .content-view { display: none; }
         .content-view.active { display: block; }
-        
+
         .case-card { transition: all 0.3s ease; width: 100%; text-align: left; }
         .theme-dark .case-card { background-color: var(--surface-dark); border: 1px solid var(--border-dark); }
         .theme-light .case-card { background-color: var(--surface-light); border: 1px solid var(--border-light); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
@@ -125,7 +125,7 @@
         .theme-dark .case-table td { border-bottom: 1px solid var(--border-dark); }
         .theme-light .case-table td { border-bottom: 1px solid var(--border-light); }
         .case-table th:first-child, .case-table td:first-child { font-weight: 600; }
-        
+
         /* Estilos para os quadrantes de risco */
         .risk-quadrant { border-radius: 0.5rem; padding: 1rem; }
         .theme-dark .risk-quadrant { border: 1px solid var(--border-dark); background-color: var(--surface-dark); }
@@ -195,7 +195,7 @@
             transform: translateX(-50%);
             background-color: var(--line-color, #8b5cf6);
         }
-        
+
         .opp-tree-group { display: flex; justify-content: center; align-items: flex-start; position: relative; padding-top: 20px; }
         .opp-tree-group::before {
             content: '';
@@ -209,12 +209,12 @@
         }
         .opp-tree-group > .opp-tree-branch { flex: 1; min-width: 240px; padding: 0 5px; }
         .opp-tree-group.sub-group > .opp-tree-branch { min-width: auto; }
-        
+
         .opp-tree-group.main-group::after {
             content: '';
             position: absolute;
             top: 0;
-            left: 12.5%; 
+            left: 12.5%;
             right: 12.5%;
             height: 1px;
             background-color: var(--line-color, #8b5cf6);
@@ -294,7 +294,7 @@
             display: flex;
             gap: 1rem;
         }
-        
+
         .roadmap-header-col-container {
             grid-column: 2 / 5;
             display: flex;
@@ -343,12 +343,12 @@
             background-color: var(--surface-dark);
             border: 1px solid var(--border-dark);
         }
-        
+
         .theme-light .roadmap-item {
             background-color: var(--surface-light);
             border: 1px solid var(--border-light);
         }
-        
+
         /* Estilos para o Replace Plan */
         .replace-plan-grid {
             display: grid;
@@ -368,7 +368,7 @@
             background-color: var(--accent-dark);
             color: white;
         }
-        
+
         .theme-light .replace-plan-header-col {
             background-color: var(--accent-light);
             color: white;
@@ -385,7 +385,7 @@
             background-color: var(--accent-dark);
             color: white;
         }
-        
+
         .theme-light .replace-plan-card {
             background-color: var(--accent-light);
             color: white;
@@ -397,7 +397,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .theme-dark .replace-plan-sprint-header {
             background-color: var(--surface-dark);
             border: 1px solid var(--border-dark);
@@ -409,7 +409,7 @@
             border: 1px solid var(--border-light);
             color: var(--text-primary-light);
         }
-        
+
         /* Estilos para o novo slide de Métricas */
         .metrics-grid {
             display: grid;
@@ -446,7 +446,7 @@
         .theme-light .metrics-card h4 {
             color: var(--accent-light);
         }
-        
+
         .metrics-card p {
             margin-bottom: 0.5rem;
             font-size: 0.875rem;
@@ -455,7 +455,7 @@
         .theme-light .metrics-card p {
             color: var(--text-secondary-light);
         }
-        
+
         .metrics-card strong {
             font-weight: 600;
             color: var(--text-primary-dark);
@@ -560,7 +560,7 @@
             padding: 0.75rem 1rem;
             text-align: left;
         }
-        
+
         .theme-dark .sprint-backlog-table th {
             background-color: rgba(147, 51, 234, 0.1);
             color: var(--accent-dark);
@@ -570,7 +570,7 @@
             background-color: #f5f3ff;
             color: var(--accent-light);
         }
-        
+
         .theme-dark .sprint-backlog-table td {
             border-bottom: 1px solid var(--border-dark);
         }
@@ -597,12 +597,12 @@
             background-color: #ec4899; /* Rosa */
             color: white;
         }
-        
+
         .status-in-progress {
             background-color: #3b82f6; /* Azul */
             color: white;
         }
-        
+
         .status-done {
             background-color: #10b981; /* Verde */
             color: white;
@@ -619,7 +619,7 @@
     </style>
 </head>
 <body class="w-full h-screen">
-    
+
     <div class="fixed top-6 right-8 z-50 flex items-center gap-4">
         <button id="menu-toggle" class="p-2 rounded-full secondary-text hover-bg-surface md:hidden">
             <i data-lucide="menu"></i>
@@ -635,7 +635,7 @@
             <h1 class="text-4xl md:text-5xl font-black mb-4 title-text">Bem-vindo ao meu Sprint.</h1>
             <p class="text-lg secondary-text mb-2">O objetivo desta Sprint é simples:</p>
             <p class="text-xl font-bold accent-text mb-12">"Descobrir o valor que posso agregar ao seu time em 2 minutos."</p>
-            
+
             <h2 class="text-2xl font-bold title-text mb-6">O que você quer realizar primeiro?</h2>
             <div class="grid md:grid-cols-2 gap-6 max-w-xl mx-auto">
                 <button id="go-to-cases-card" class="user-story-card p-6 rounded-lg">
@@ -650,1042 +650,4 @@
         </div>
     </div>
 
-    <div id="main-board" class="hidden h-screen relative md:grid md:grid-cols-[280px_1fr]">
-        <aside id="sprint-backlog" class="sprint-backlog p-6 flex flex-col">
-            <div class="flex items-center justify-between text-xl font-bold title-text mb-8">
-                <button id="back-to-planning" class="flex items-center hover-accent-text transition-colors">
-                    <i data-lucide="arrow-left" class="inline h-5 w-5 mr-2"></i>
-                    <h2>Sprint Backlog</h2>
-                </button>
-                <button id="close-menu" class="p-1 rounded-full hover-bg-surface md:hidden">
-                     <i data-lucide="x" class="inline h-5 w-5"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col gap-2">
-                <button data-target="about" class="backlog-item p-3 rounded-md secondary-text hover-bg-surface transition-colors flex items-center gap-3">
-                    <i data-lucide="user-round" class="inline h-5 w-5"></i>Soft & Hard Skills
-                </button>
-                <button data-target="cases" class="backlog-item p-3 rounded-md secondary-text hover-bg-surface transition-colors flex items-center gap-3">
-                    <i data-lucide="target" class="inline h-5 w-5"></i>Cases de Sucesso
-                </button>
-                <button data-target="contact" class="backlog-item p-3 rounded-md secondary-text hover-bg-surface transition-colors flex items-center gap-3">
-                    <i data-lucide="send" class="inline h-5 w-5"></i>Contato
-                </button>
-            </nav>
-        </aside>
-        
-        <main class="content-area p-6 md:p-10">
-            <div id="view-about" class="content-view">
-                <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
-                    <div class="md:col-span-2 flex justify-center">
-                        <div class="p-2 rounded-full border-2 profile-pic-border">
-                            <img id="profile-pic-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Foto de perfil de Gabriella Radicchi" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover">
-                        </div>
-                    </div>
-                    <div class="md:col-span-3">
-                        <h2 class="text-3xl font-bold title-text mb-8">Soft & Hard Skills</h2>
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="font-bold text-lg accent-text mb-3">Hard Skills</h3>
-                                <ul class="secondary-text space-y-2">
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>Metodologias Ágeis: Scrum, Kanban e Lean</span></li>
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>Definição e priorização de backlog e roadmap</span></li>
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>User Story Mapping e Análise de Requisitos</span></li>
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>BPM, BPMN e Modelagem de Processos</span></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg accent-text mb-3">Soft Skills</h3>
-                                <ul class="secondary-text space-y-2">
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>Comunicação e condução de reuniões</span></li>
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>Pensamento crítico e resolução de problemas</span></li>
-                                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5"></i><span>Liderança e trabalho em equipe</span></li>
-                                </ul>
-                            </div>
-                             <div>
-                                <h3 class="font-bold text-lg accent-text mb-3">Certificados</h3>
-                                <ul class="secondary-text space-y-2">
-                                    <li class="flex items-center gap-3"><i data-lucide="award" class="w-5 h-5"></i><span>Product Management & Discovery (3PM3)</span></li>
-                                    <li class="flex items-center gap-3"><i data-lucide="award" class="w-5 h-5"></i><span>Gestão Ágil com Scrum (Udemy)</span></li>
-                                </ul>
-                            </div>
-                            <div class="pt-4">
-                                <a href="https://drive.google.com/file/d/1lUdynYg4FQEZ9ATcObiv9PKeYqZQIfDU/view?usp=sharing" target="_blank" class="sprint-button text-white font-semibold py-2 px-6 rounded-lg inline-flex items-center gap-2">
-                                    <i data-lucide="file-text" class="w-4 h-4"></i>
-                                    Ver Currículo Completo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="view-cases" class="content-view">
-                <h2 class="text-3xl font-bold title-text mb-8">Sprints de Sucesso (Incrementos)</h2>
-                <div id="cases-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <button class="case-card p-6 rounded-lg">
-                        <p class="text-sm accent-text font-semibold mb-2">Product Management</p>
-                        <h3 class="text-xl font-bold title-text mb-3">Slack para Comunidades</h3>
-                        <p class="secondary-text text-sm mb-4">Análise de mercado e riscos para criar uma nova vertical no Slack, focada em comunidades, com planos e features personalizadas.</p>
-                        <p class="font-semibold title-text">Resultado: <span class="accent-text">Aumento da aquisição em planos premium.</span></p>
-                    </button>
-                </div>
-            </div>
-
-            <div id="view-contact" class="content-view flex flex-col justify-center items-center h-full p-6 text-center">
-                 <div class="contact-card w-full max-w-md rounded-lg shadow-2xl p-8 mx-auto">
-                    <div class="mx-auto mb-6 block w-24 h-24">
-                        <img id="contact-view-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Foto de perfil" class="w-24 h-24 rounded-full object-cover border-2 profile-pic-border">
-                    </div>
-                     <div class="space-y-4 text-left">
-                         <a href="#" id="open-email-modal" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
-                             <i data-lucide="mail" class="w-6 h-6 mr-4 accent-text"></i>
-                             <span class="secondary-text text-base">gabriellaradicchi@hotmail.com</span>
-                         </a>
-                         <a href="https://www.linkedin.com/in/gabriellaradicchi/" target="_blank" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
-                             <i data-lucide="linkedin" class="w-6 h-6 mr-4 accent-text"></i>
-                             <span class="secondary-text text-base">/in/gabriellaradicchi/</span>
-                         </a>
-                         <a href="https://wa.me/5531992066291" target="_blank" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
-                             <i data-lucide="phone" class="w-6 h-6 mr-4 accent-text"></i>
-                             <span class="secondary-text text-base">+55 (31) 99206-6291</span>
-                         </a>
-                     </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <div id="case-carousel-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-        <div id="case-carousel-backdrop" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm"></div>
-        <div id="case-carousel-content" class="relative z-10 w-full max-w-4xl rounded-lg shadow-2xl p-4 contact-card flex flex-col">
-            <button id="close-case-carousel" class="absolute top-4 right-4 text-gray-400 hover:text-white z-20">
-                <i data-lucide="x"></i>
-            </button>
-            <div id="carousel-slides-container" class="p-8 max-h-[80vh]">
-                </div>
-            <div class="carousel-footer flex justify-center items-center p-4">
-                <button id="carousel-prev" class="p-2 rounded-full secondary-text hover-bg-surface">
-                    <i data-lucide="arrow-left"></i>
-                </button>
-                <span id="carousel-pagination" class="mx-4 text-sm font-semibold secondary-text"></span>
-                <button id="carousel-next" class="p-2 rounded-full secondary-text hover-bg-surface">
-                    <i data-lucide="arrow-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="email-modal" class="fixed inset-0 z-50 flex items-center justify-center p-6 hidden">
-        <div id="email-modal-backdrop" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm"></div>
-        <div class="relative z-10 w-full max-w-lg rounded-lg shadow-2xl p-6 contact-card">
-            <h2 class="text-2xl font-bold title-text mb-6">Entrar em Contato</h2>
-            <form id="email-form" action="https://formspree.io/f/xgvzgeez" method="POST">
-                <div class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium secondary-text mb-1">Nome <span class="text-red-500">*</span></label>
-                        <input type="text" id="name" name="nome" required class="w-full p-2 rounded-md bg-transparent border focus:ring-2 focus:outline-none theme-dark:border-gray-700 theme-light:border-gray-300 theme-dark:focus:border-purple-500 theme-light:focus:border-purple-500 theme-dark:focus:ring-purple-500/50 theme-light:focus:ring-purple-500/50">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium secondary-text mb-1">E-mail <span class="text-red-500">*</span></label>
-                        <input type="email" id="email" name="email" required class="w-full p-2 rounded-md bg-transparent border focus:ring-2 focus:outline-none theme-dark:border-gray-700 theme-light:border-gray-300 theme-dark:focus:border-purple-500 theme-light:focus:border-purple-500 theme-dark:focus:ring-purple-500/50 theme-light:focus:ring-purple-500/50">
-                    </div>
-                    <div>
-                        <label for="description" class="block text-sm font-medium secondary-text mb-1">Descrição <span class="text-red-500">*</span></label>
-                        <textarea id="description" name="mensagem" rows="4" required class="w-full p-2 rounded-md bg-transparent border focus:ring-2 focus:outline-none theme-dark:border-gray-700 theme-light:border-gray-300 theme-dark:focus:border-purple-500 theme-light:focus:border-purple-500 theme-dark:focus:ring-purple-500/50 theme-light:focus:ring-purple-500/50"></textarea>
-                    </div>
-                </div>
-                <div class="flex justify-end gap-4 mt-6">
-                    <button type="button" id="cancel-email" class="px-4 py-2 rounded-md secondary-text hover-bg-surface">Cancelar</button>
-                    <button type="submit" class="px-6 py-2 rounded-md text-white sprint-button">Enviar</button>
-                </div>
-            </form>
-            </div>
-    </div>
-    
-    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-6 hidden">
-        <div id="success-modal-backdrop" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm"></div>
-        <div class="relative z-10 w-full max-w-sm rounded-lg shadow-2xl p-6 contact-card text-center">
-            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
-                 <i data-lucide="check" class="h-6 w-6 text-green-600"></i>
-            </div>
-            <h3 class="text-lg leading-6 font-medium title-text">Mensagem Enviada!</h3>
-            <div class="mt-2 px-7 py-3">
-                <p class="text-sm secondary-text">Obrigado por entrar em contato. Retornarei em breve.</p>
-            </div>
-            <div class="items-center px-4 py-3">
-                <button id="close-success-modal" class="px-4 py-2 sprint-button text-white text-base font-medium rounded-md w-full shadow-sm">
-                    OK
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-
-            // Views
-            const sprintPlanningView = document.getElementById('sprint-planning');
-            const mainBoardView = document.getElementById('main-board');
-            
-            // Controls
-            const backToPlanningBtn = document.getElementById('back-to-planning');
-            const goToCasesCard = document.getElementById('go-to-cases-card');
-            const goToContactCard = document.getElementById('go-to-contact-card');
-
-            // Sidebar (Backlog)
-            const sprintBacklog = document.getElementById('sprint-backlog');
-            const menuToggle = document.getElementById('menu-toggle');
-            const closeMenuBtn = document.getElementById('close-menu');
-            const backlogLinks = document.querySelectorAll('.backlog-item');
-            const contentPanes = document.querySelectorAll('.content-view');
-
-            // Imagens de Perfil (agora fixas)
-            const profilePicImg = document.getElementById('profile-pic-img');
-            const contactViewImg = document.getElementById('contact-view-img');
-            // A URL da imagem principal (da seção "about") será usada para a imagem menor (do "contato")
-            contactViewImg.src = profilePicImg.src;
-            
-            // Case Carousel
-            const caseCarouselModal = document.getElementById('case-carousel-modal');
-            const caseCarouselBackdrop = document.getElementById('case-carousel-backdrop');
-            const closeCaseCarouselBtn = document.getElementById('close-case-carousel');
-            const carouselSlidesContainer = document.getElementById('carousel-slides-container');
-            const carouselPrevBtn = document.getElementById('carousel-prev');
-            const carouselNextBtn = document.getElementById('carousel-next');
-            const carouselPagination = document.getElementById('carousel-pagination');
-            let currentSlideIndex = 0;
-
-            // Email Modal
-            const emailModal = document.getElementById('email-modal');
-            const openEmailModalBtn = document.getElementById('open-email-modal');
-            const emailModalBackdrop = document.getElementById('email-modal-backdrop');
-            const cancelEmailBtn = document.getElementById('cancel-email');
-            const emailForm = document.getElementById('email-form');
-
-            // Success Modal
-            const successModal = document.getElementById('success-modal');
-            const successModalBackdrop = document.getElementById('success-modal-backdrop');
-            const closeSuccessModalBtn = document.getElementById('close-success-modal');
-
-            // Theme Toggle
-            const themeToggle = document.getElementById('theme-toggle');
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            const body = document.body;
-
-            // --- DATA ---
-            const portfolioCases = [
-                { 
-                    title: "Slack para Comunidades", 
-                    category: "Product Management", 
-                    result: "Aumento da aquisição em planos premium.", 
-                    description: "Análise de mercado e riscos para criar uma nova vertical no Slack, focada em comunidades, com planos e features personalizadas.",
-                    isCarousel: true,
-                    slides: [
-                        { 
-                            title: 'Análise de Mercado', 
-                            content: `
-                                <div class="case-table-wrapper">
-                                    <table class="case-table">
-                                        <thead>
-                                            <tr>
-                                                <th>Funcionalidade</th><th>Slack</th><th>Discord</th><th>ClickUp</th><th>WhatsApp</th><th>Telegram</th><th>Microsoft Teams</th><th>Google Chat</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr><td>Votações</td><td>Não nativo; através de integrações</td><td>Nativo (com bots)</td><td>Não nativo</td><td>Não nativo</td><td>Nativo (com bots e canais)</td><td>Nativo (com aplicativos de terceiros)</td><td>Nativo (com Google Forms)</td></tr>
-                                            <tr><td>Perfil Personalizado para Admin</td><td>Básico, mas não centralizado</td><td>Avançado e personalizável</td><td>Avançado</td><td>Não aplicável</td><td>Avançado e personalizável</td><td>Avançado e personalizável</td><td>Básico</td></tr>
-                                            <tr><td>Histórico de Mensagens Favoritadas</td><td>Ilimitado para favoritos, mas não para todas as mensagens</td><td>Favoritadas e buscáveis</td><td>Ilimitado</td><td>Não aplicável</td><td>Não aplicável</td><td>Ilimitado</td><td>Ilimitado</td></tr>
-                                            <tr><td>Reuniões Online (com grandes grupos)</td><td>Limitado sem funcionalidades avançadas</td><td>Robustas, até 25.000 pessoas</td><td>Não aplicável</td><td>Limitado a chamadas de grupo</td><td>Limitado a grupos grandes</td><td>Robustas e extensivas</td><td>Robustas</td></tr>
-                                            <tr><td>Integrações Avançadas</td><td>Limitado no plano gratuito</td><td>Amplo suporte através de bots</td><td>Extensa</td><td>Limitado</td><td>Amplo suporte através de bots</td><td>Extensa com muitas ferramentas</td><td>Limitada às ferramentas Google</td></tr>
-                                            <tr><td>Análise e Relatórios Avançados</td><td>Básico</td><td>Não aplicável</td><td>Avançado</td><td>Não aplicável</td><td>Não aplicável</td><td>Avançado (em planos pagos)</td><td>Básico</td></tr>
-                                            <tr><td>Moderação de Conteúdo</td><td>Básica</td><td>Avançada e customizável</td><td>Avançada</td><td>Não aplicável</td><td>Avançada e customizável</td><td>Avançada</td><td>Básica</td></tr>
-                                            <tr><td>Reações e Emojis Avançados</td><td>Avançado</td><td>Amplo e customizável</td><td>Básico</td><td>Básico</td><td>Amplo e customizável</td><td>Amplo e customizável</td><td>Básico</td></tr>
-                                            <tr><td>Conformidade com Regulamentos</td><td>Básica</td><td>Não aplicável</td><td>Avançada</td><td>Não aplicável</td><td>Não aplicável</td><td>Avançada (em planos pagos)</td><td>Básica</td></tr>
-                                            <tr><td>Conectividade Multicanal</td><td>Limitada</td><td>Nativo</td><td>Avançada</td><td>Não aplicável</td><td>Avançada</td><td>Avançada (em planos pagos)</td><td>Básica</td></tr>
-                                            <tr><td>Marcação de Eventos</td><td>Não nativo; através de integrações</td><td>Nativo (com bots e funcionalidades internas)</td><td>Não nativo</td><td>Nativo (com calendários e ferramentas de eventos)</td><td>Nativo (com Google Calendar)</td><td>Nativo (para tarefas e eventos)</td><td>Nativo (com bots e canais)</td></tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            `
-                        },
-                        { 
-                            title: 'Lean Canvas', 
-                            content: `
-                                <div class="lean-canvas-grid secondary-text">
-                                    <div class="lean-canvas-item lc-problema">
-                                        <h4>Problema</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Insatisfação de Usuários: Usuários das comunidades existentes estão insatisfeitos com as funcionalidades atuais do Slack para pequenos grupos, buscando alternativas que melhor atendam às suas necessidades.</li>
-                                            <li>Preferência por Outras Soluções: Comunidades e grupos informais preferem plataformas como WhatsApp, Telegram, ou Discord, que oferecem funcionalidades que percebem como mais adequadas às suas necessidades de comunicação e integração.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-solucao">
-                                        <h4>Solução</h4>
-                                        <p>Vertical Comunidades: Criar uma nova vertical do Slack focada em atender as necessidades específicas de comunidades e pequenos grupos informais.</p>
-                                    </div>
-                                    <div class="lean-canvas-item lc-metricas">
-                                        <h4>Métricas Chave</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Aquisição de novos clientes: Número de novas comunidades que adotam o Slack como plataforma.</li>
-                                            <li>Retenção de clientes: Taxa de retenção das comunidades após 6 meses de uso.</li>
-                                            <li>Conversão de planos gratuitos para pagos: Percentual de comunidades que passam de planos gratuitos para premium.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-proposta">
-                                        <h4>Proposta de Valor Única</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Comunicação Unificada: Uma plataforma que centraliza todas as conversas da comunidade, tornando a comunicação mais simples e eficiente.</li>
-                                            <li>Integrações Simples: Oferece fácil integração com ferramentas populares, adaptando-se às necessidades de crescimento de cada comunidade.</li>
-                                            <li>Segurança Superior: Garante segurança e privacidade elevadas, protegendo informações sensíveis e proporcionando confiança aos membros.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-vantagem">
-                                        <h4>Vantagem Injusta</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Thread e organização avançada: Ferramenta única para organizar discussões complexas de forma eficiente, algo que falta em muitas plataformas concorrentes.</li>
-                                            <li>Foco em gestão de comunidades: Funcionalidades desenvolvidas especificamente para líderes e membros de comunidades.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-canais">
-                                        <h4>Canais</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Mídias sociais: Campanhas focadas em grupos e comunidades online.</li>
-                                            <li>Parcerias estratégicas: Colaborações líderes grandes comunidades online.</li>
-                                            <li>Eventos e workshops: Participação em eventos e oferecer workshops e demonstrações práticas.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-segmentos">
-                                        <h4>Segmentos de Clientes</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Líderes de comunidades estabelecidas: Pessoas que já lideram comunidades online (profissionais, hobbies, ONGs) e estão buscando melhorar a comunicação e a gestão.</li>
-                                            <li>Iniciadores de comunidades: Pessoas que desejam criar uma nova comunidade online e precisam de uma ferramenta robusta para suportar o crescimento e a organização.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-custos">
-                                        <h4>Estrutura de Custos</h4>
-                                        <ul class="list-disc list-inside space-y-2">
-                                            <li>Desenvolvimento de novas funcionalidades: Custos associados ao design, desenvolvimento, e testes das novas funcionalidades voltadas para comunidades.</li>
-                                            <li>Marketing e aquisições de clientes: Investimento em campanhas de marketing digital, eventos, e parcerias estratégicas.</li>
-                                            <li>Suporte ao cliente especializado: Treinamento e alocação de uma equipe de suporte dedicada a atender as necessidades específicas das comunidades.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="lean-canvas-item lc-receita">
-                                        <h4>Fontes de Receita</h4>
-                                        <p>Planos de assinatura: Introdução de planos específicos para comunidades, com preços escalonados de acordo com o tamanho da comunidade e as funcionalidades necessárias.</p>
-                                    </div>
-                                </div>
-                            ` 
-                    },
-                    { title: 'Perfil de Usuário com Maior Potencial', content: '<p class="text-center p-4 border rounded-md secondary-text">Líder de Comunidade que organiza eventos voltado para o empreendedorismo e inovação, promovendo o networking entre os integrantes. Ele precisa de uma plataforma que o ajude na organização antes, durante e pós evento, para gerar engajamento entre os integrantes. Essa pessoa pode ser um parceiro que irá indicar a plataforma para sua rede de conexões.</p>' },
-                    { 
-                        title: 'Mapeamento de Dores e Motivações',
-                        content: `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm secondary-text">
-                                <div class="risk-quadrant">
-                                    <h4>Dores</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Definir datas e assuntos a serem abordados:</strong> Necessidade de uma forma eficiente para planejar eventos e discussões.</li>
-                                        <li><strong>Engajar os integrantes da comunidade:</strong> Dificuldade em manter os membros ativos e envolvidos.</li>
-                                        <li><strong>Buscar novos integrantes para a comunidade:</strong> Desafio em expandir a comunidade e atrair novos membros.</li>
-                                        <li><strong>Definir e distribuir tarefas entre os organizadores:</strong> Necessidade de um sistema para gerenciar responsabilidades dentro da equipe.</li>
-                                        <li><strong>Acompanhar o progresso das tarefas:</strong> Falta de um mecanismo eficaz para monitorar o avanço das tarefas atribuídas.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Motivações</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Organização eficiente:</strong> Um lugar onde os arquivos e tarefas ficam organizados para uma visualização clara e acessível.</li>
-                                        <li><strong>Comunicação assertiva:</strong> Ter uma comunicação clara e objetiva com todos os integrantes da comunidade.</li>
-                                        <li><strong>Planejamento dos próximos eventos:</strong> Definição de como serão os próximos eventos, com um espaço dedicado para planejá-los.</li>
-                                        <li><strong>Colaboração Contínua:</strong> Um lugar onde os integrantes da comunidade podem manter contato e obter colaboração quando necessário.</li>
-                                        <li><strong>Facilidade de Acesso e Integração:</strong> Uma plataforma que se integre com outras ferramentas e facilite a organização da comunidade de forma fluida.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `
-                    },
-                    { 
-                        title: 'Mapeamento de Riscos', 
-                        content: `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm secondary-text">
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Valor</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Desvalorização da proposta:</strong> Comunidades podem não ver valor suficiente nas funcionalidades oferecidas em comparação com alternativas gratuitas.</li>
-                                        <li><strong>Falta de diferenciação:</strong> Slack pode não se destacar o suficiente frente aos concorrentes como Discord e WhatsApp.</li>
-                                        <li><strong>Preço inadequado:</strong> Comunidades podem não estar dispostas a pagar pelos planos propostos.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Negócio</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Canibalização de outros segmentos:</strong> Planos para comunidades podem atrair clientes que já usam planos empresariais, reduzindo receita.</li>
-                                        <li><strong>Baixa rentabilidade:</strong> O novo segmento pode não gerar lucro suficiente para justificar os investimentos.</li>
-                                        <li><strong>Dificuldade em escalar:</strong> O crescimento do novo segmento pode ser menor do que o esperado.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Usabilidade</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Complexidade da plataforma:</strong> Comunidades podem achar o Slack complicado em comparação com alternativas mais simples.</li>
-                                        <li><strong>Curva de aprendizado alta:</strong> A adoção pode ser lenta devido à dificuldade de uso para novos usuários.</li>
-                                        <li><strong>Falta de suporte:</strong> Se o suporte não for adequado, usuários podem abandonar a plataforma.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Viabilidade</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Desafios técnicos:</strong> Dificuldades em implementar e integrar novas funcionalidades específicas para comunidades.</li>
-                                        <li><strong>Escalabilidade:</strong> A infraestrutura pode não suportar o aumento de usuários e funcionalidades sem comprometer o desempenho.</li>
-                                        <li><strong>Concorrência forte:</strong> Produtos já estabelecidos como Discord podem dificultar a entrada do Slack nesse mercado.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `
-                    },
-                    {
-                        title: 'Árvore de Oportunidades',
-                        content: `
-                            <div class="opp-tree-wrapper">
-                                <div class="flex justify-center mb-8 relative">
-                                    <div class="opp-tree-item opp-tree-outcome">
-                                        <h5>Outcome</h5>
-                                        <p>Criar uma nova vertical do Slack focada em atender as necessidades específicas de comunidades e pequenos grupos informais.</p>
-                                    </div>
-                                </div>
-                                <div class="opp-tree-group main-group">
-                                    <div class="opp-tree-branch" style="--line-color: #ec4899;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#ec4899]">Opportunity</h5>
-                                            <p>Plano personalizado</p>
-                                        </div>
-                                        <div class="opp-tree-branch" style="--line-color: #ec4899;">
-                                            <div class="opp-tree-item">
-                                                <h5 class="text-[#ec4899]">Solution</h5>
-                                                <p>Personalizar planos com itens existentes/novos que fazem mais sentido para as Comunidades</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="opp-tree-branch" style="--line-color: #3b82f6;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#3b82f6]">Opportunity</h5>
-                                            <p>Espaço de Armazenamento e Mensagens</p>
-                                        </div>
-                                        <div class="opp-tree-group sub-group" style="--line-color: #3b82f6;">
-                                            <div class="opp-tree-branch" style="--line-color: #3b82f6;">
-                                                <div class="opp-tree-item">
-                                                    <h5 class="text-[#3b82f6]">Solution</h5>
-                                                    <p>Aumentar o espaço de armazenamento de mensagens</p>
-                                                </div>
-                                            </div>
-                                            <div class="opp-tree-branch" style="--line-color: #3b82f6;">
-                                                <div class="opp-tree-item">
-                                                    <h5 class="text-[#3b82f6]">Solution</h5>
-                                                    <p>Definir um prazo para download do backup de mensagens e arquivos</p>
-                                                </div>
-                                                <div class="opp-tree-branch" style="--line-color: #3b82f6;">
-                                                    <div class="opp-tree-item">
-                                                        <h5 class="text-[#3b82f6]">Experiment</h5>
-                                                        <p>Liberar essa funcionalidade para um grupo de pessoas e coletar feedbacks</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="opp-tree-branch" style="--line-color: #10b981;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#10b981]">Opportunity</h5>
-                                            <p>Organização de discussões</p>
-                                        </div>
-                                        <div class="opp-tree-branch" style="--line-color: #10b981;">
-                                            <div class="opp-tree-item">
-                                                <h5 class="text-[#10b981]">Solution</h5>
-                                                <p>Aprimorar a plataforma para permitir votações sobre eventos futuros</p>
-                                            </div>
-                                            <div class="opp-tree-branch" style="--line-color: #10b981;">
-                                                <div class="opp-tree-item">
-                                                    <h5 class="text-[#10b981]">Experiment</h5>
-                                                    <p>Realizar teste de usabilidade com usuários de comunidades para validar a funcionalidade</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="opp-tree-branch" style="--line-color: #8b5cf6;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#8b5cf6]">Opportunity</h5>
-                                            <p>Melhorias em Videoconferências</p>
-                                        </div>
-                                        <div class="opp-tree-branch" style="--line-color: #8b5cf6;">
-                                            <div class="opp-tree-item">
-                                                <h5 class="text-[#8b5cf6]">Solution</h5>
-                                                <p>Aprimorar videochamadas para torná-las mais assertivas e adequadas para Comunidades</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        {
-                            title: 'Roadmap de Produto',
-                            content: `
-                                <div class="bg-purple-800 p-6 rounded-lg text-white">
-                                    <div class="flex justify-between items-center mb-6">
-                                        <h3 class="text-xl font-bold">ROADMAP DE PRODUTO</h3>
-                                    </div>
-                                    <div class="bg-purple-900 p-4 rounded-md mb-6 flex justify-between items-center relative">
-                                        <div class="flex-1 pr-4 relative">
-                                            <h4 class="font-bold text-sm mb-1">Visão</h4>
-                                            <p class="text-xs">Criar uma nova vertical do Slack focada em atender as necessidades específicas de comunidades e pequenos grupos informais.</p>
-                                            <span class="absolute top-0 right-0 h-full border-r border-white"></span>
-                                        </div>
-                                        <div class="flex-1 pl-4">
-                                            <h4 class="font-bold text-sm mb-1">Objetivos</h4>
-                                            <p class="text-xs">Aumentar a aquisição e ativação de planos Premium</p>
-                                        </div>
-                                    </div>
-                                    <div class="overflow-x-auto">
-                                        <div class="min-w-[900px]">
-                                            <div class="grid grid-cols-[150px_1fr_1fr_1fr] gap-4 items-stretch text-sm">
-                                                <div class="p-4 rounded-md font-bold text-center bg-purple-600 text-white flex items-center justify-center">
-                                                    LINHA DO TEMPO
-                                                </div>
-                                                <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">Agora</div>
-                                                <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">Próximo</div>
-                                                <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">Depois</div>
-                                                
-                                                <div class="p-4 rounded-md font-bold text-center bg-purple-600 text-white flex items-center justify-center row-start-2 row-end-6">
-                                                    OPORTUNIDADES
-                                                </div>
-                                                <div class="p-4 rounded-md bg-purple-700">
-                                                    <h5 class="font-semibold text-sm">Planos Personalizados para Comunidades</h5>
-                                                    <p class="text-xs">Lançar planos personalizados para comunidades, destacando recursos relevantes.</p>
-                                                </div>
-                                                <div class="p-4 rounded-md bg-purple-700">
-                                                    <h5 class="font-semibold text-sm">Aumento de Armazenamento e Backup</h5>
-                                                    <p class="text-xs">Implementar melhorias no armazenamento e opções de backup, incentivando o upgrade para planos Premium.</p>
-                                                </div>
-                                                <div class="p-4 rounded-md bg-purple-700">
-                                                    <h5 class="font-semibold text-sm">Melhoria em Videochamadas</h5>
-                                                    <p class="text-xs">Aprimorar videochamadas para suportar grandes grupos e eventos ao vivo.</p>
-                                                </div>
-                                                
-                                                <div></div>
-                                                <div class="p-4 rounded-md bg-purple-700">
-                                                    <h5 class="font-semibold text-sm">Organização de Discussões e Planejamento de Eventos</h5>
-                                                    <p class="text-xs">Introduzir e testar novas funcionalidades de organização de eventos e votações</p>
-                                                </div>
-                                                <div></div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        {
-                            title: 'Priorização (ICE Score)',
-                            content: `
-                                <div class="ice-score-container">
-                                    <div class="ice-card">
-                                        <p>Primeiramente, listei as funcionalidades descritas na Release Plan. Utilizei a metodologia de ICE Score (disponibilizada) para ajudar na priorização. Na escala de 1 a 5, uma nota maior para Impacto e Importância é melhor, pois indica maior relevância na entrega dos resultados esperados. No caso do Esforço, uma nota maior também é melhor, pois indica menor complexidade e maior facilidade de implementação. Após essa avaliação, ficou definido os itens priorizados de acordo com 10 e 12 unidades de esforço.</p>
-                                    </div>
-                                    <h4 class="font-bold text-lg mb-4 mt-6">Com 10 unidades de esforço</h4>
-                                    <div class="ice-table-wrapper">
-                                        <table class="ice-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Teste</th>
-                                                    <th>Impacto</th>
-                                                    <th>Importância</th>
-                                                    <th>Esforço</th>
-                                                    <th>ICE</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1. Agrupar funcionalidades relevantes para comunidades, exibindo um plano personalizado com essas funcionalidades</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">12</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2. Criar funcionalidade de votação (Dia, Tema, Local) e estendo os resultados em tempo real com finalização de escolhas pelos organizadores</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">11</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3. Criar opções de armazenamento com valores diferenciados</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">9</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4. Implementar Backup Externo</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>2</td>
-                                                    <td class="ice-score-highlight">8</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5. Aprimorar videochamadas para múltiplos participantes com funcionalidades de monitoramento e controle</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>2</td>
-                                                    <td class="ice-score-highlight">7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6. Avaliar e melhorar infraestrutura de servidor</td>
-                                                    <td>2</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">7</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <h4 class="font-bold text-lg mb-4 mt-6">Com 12 unidades de esforço</h4>
-                                    <div class="ice-table-wrapper">
-                                        <table class="ice-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Teste</th>
-                                                    <th>Impacto</th>
-                                                    <th>Importância</th>
-                                                    <th>Esforço</th>
-                                                    <th>ICE</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1. Agrupar funcionalidades relevantes para comunidades, exibindo um plano personalizado com essas funcionalidades</td>
-                                                    <td>4</td>
-                                                    <td>5</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">12</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2. Criar funcionalidade de votação (Dia, Tema, Local) e estendo os resultados em tempo real com finalização de escolhas pelos organizadores</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">11</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3. Criar opções de armazenamento com valores diferenciados</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">9</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4. Implementar Backup Externo</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>2</td>
-                                                    <td class="ice-score-highlight">8</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5. Aprimorar videochamadas para múltiplos participantes com funcionalidades de monitoramento e controle</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td>2</td>
-                                                    <td class="ice-score-highlight">7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6. Avaliar e melhorar infraestrutura de servidor</td>
-                                                    <td>2</td>
-                                                    <td>2</td>
-                                                    <td>3</td>
-                                                    <td class="ice-score-highlight">7</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        {
-                            title: 'Histórias de Usuário',
-                            content: `
-                                <div class="space-y-8 text-sm">
-                                    <div class="grid md:grid-cols-2 gap-8">
-                                        <div class="p-6 rounded-lg bg-purple-900">
-                                            <h4 class="font-bold text-white mb-2">Agrupar funcionalidades relevantes para comunidades, exibindo um plano personalizado com essas funcionalidades</h4>
-                                            <ul class="text-xs text-white/80 space-y-2">
-                                                <li><strong>Task:</strong> Agrupar funcionalidades relevantes para comunidades</li>
-                                                <li><strong>Responsável:</strong> UX</li>
-                                                <li><strong>Objetivo:</strong> Identificar e categorizar as funcionalidades que são importantes para comunidades e como elas devem ser agrupadas para facilitar a experiência do usuário.</li>
-                                                <li class="mt-4"><strong>Task:</strong> Criar design de exibição de planos na plataforma</li>
-                                                <li><strong>Responsável:</strong> UX</li>
-                                                <li><strong>Objetivo:</strong> Desenvolver o design para exibir os planos personalizados, garantindo que sejam intuitivos e atraentes para os usuários.</li>
-                                                <li class="mt-4"><strong>Task:</strong> Alterar no código da plataforma para exibir o plano personalizado</li>
-                                                <li><strong>Responsável:</strong> Dev 1</li>
-                                                <li><strong>Objetivo:</strong> Implementar as alterações necessárias no código da plataforma para suportar a exibição dos planos personalizados conforme o design definido pela equipe de UX.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="p-6 rounded-lg bg-purple-900">
-                                            <h4 class="font-bold text-white mb-2">Criar funcionalidade de votação (Dia, Tema, Local) e estendo os resultados em tempo real com finalização de escolhas pelos organizadores</h4>
-                                            <ul class="text-xs text-white/80 space-y-2">
-                                                <li><strong>Task:</strong> Criar Design e requisitos da Funcionalidade de Votação</li>
-                                                <li><strong>Responsável:</strong> UX</li>
-                                                <li><strong>Objetivo:</strong> Detalhar os requisitos para a funcionalidade de votação, incluindo opções de votação (Dia, Tema, Local), exibição de resultados em tempo real e opções de finalização pelas organizadores. Criar fluxos de trabalho e especificações.</li>
-                                                <li class="mt-4"><strong>Task:</strong> Implementar a Funcionalidade de Votação</li>
-                                                <li><strong>Responsável:</strong> Dev 2</li>
-                                                <li><strong>Objetivo:</strong> Implementar as alterações necessárias no código da plataforma para visualização da funcionalidade de votação</li>
-                                                <li class="mt-4"><strong>Task:</strong> Testar a Funcionalidade de Votação</li>
-                                                <li><strong>Responsável:</strong> Dev 2</li>
-                                                <li><strong>Objetivo:</strong> Verificar se a funcionalidade está funcionando conforme o esperado.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="grid md:grid-cols-2 gap-8 mt-8">
-                                        <div class="p-6 rounded-lg bg-purple-900">
-                                            <h4 class="font-bold text-white mb-2">Criar opções de armazenamento com valores diferenciados</h4>
-                                            <ul class="text-xs text-white/80 space-y-2">
-                                                <li><strong>Task:</strong> Criar design de exibição de planos de armazenamento na plataforma</li>
-                                                <li><strong>Responsável:</strong> UX</li>
-                                                <li><strong>Objetivo:</strong> Desenvolver o design para apresentar as opções de armazenamento com valores diferenciados de maneira clara e atraente.</li>
-                                                <li class="mt-4"><strong>Task:</strong> Alterar no código da plataforma para exibir opções de armazenamento com valores diferenciados</li>
-                                                <li><strong>Responsável:</strong> Dev 1</li>
-                                                <li><strong>Objetivo:</strong> Implementar as mudanças necessárias no código da plataforma para suportar e exibir corretamente as opções de armazenamento com valores diferenciados, conforme o design criado pela equipe de UX.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="p-6 rounded-lg bg-purple-900">
-                                            <h4 class="font-bold text-white mb-2">Implementar Backup Externo</h4>
-                                            <ul class="text-xs text-white/80 space-y-2">
-                                                <li><strong>Task:</strong> Definir Requisitos de Backup Externo</li>
-                                                <li><strong>Responsável:</strong> Dev 3</li>
-                                                <li><strong>Objetivo:</strong> Determinar quais dados serão incluídos no backup, com que frequência os backups serão feitos, e onde os dados serão armazenados externamente. Definir como recuperar os dados e por quanto tempo mantê-los.</li>
-                                                <li class="mt-4"><strong>Task:</strong> Desenvolver e Implementar Mecanismo de Backup</li>
-                                                <li><strong>Responsável:</strong> Dev 3</li>
-                                                <li><strong>Objetivo:</strong> Criar e configurar scripts para realizar backups automáticos dos dados. Integrar esses scripts com a solução de armazenamento externo e definir o agendamento dos backups.</li>
-                                                <li class="mt-4"><strong>Task:</strong> Testar o Processo de Backup e Restauração</li>
-                                                <li><strong>Responsável:</strong> Dev 3</li>
-                                                <li><strong>Objetivo:</strong> Verificar se os backups são feitos corretamente e se os dados podem ser restaurados com sucesso. Garantir que o processo de backup e recuperação funcione como esperado.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        {
-                            title: 'Sprint Backlog - Squad',
-                            content: `
-                                <div class="bg-purple-800 p-6 rounded-lg text-white text-sm overflow-x-auto">
-                                    <div class="min-w-[1200px]">
-                                        <div class="grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] gap-4 mb-4 items-center">
-                                            <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">#</div>
-                                            <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">TASK</div>
-                                            <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">PERSON</div>
-                                            <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">STATUS</div>
-                                            <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">DUE DATE</div>
-                                            <div class="p-2 rounded-md font-semibold text-center bg-white text-purple-800 flex items-center justify-center">EFFORT POINTS</div>
-
-                                            <div class="flex items-center justify-center">1</div>
-                                            <div class="flex items-center">Aprimorar videochamadas para suportar grandes grupos e eventos ao vivo</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-backlog status-badge">BACKLOG</span></div>
-                                            <div class="flex items-center justify-center">17/09/24</div>
-                                            <div class="flex items-center justify-center">8 pontos</div>
-
-                                            <div class="flex items-center justify-center">2</div>
-                                            <div class="flex items-center">Implementar maior espaço de armazenamento para mensagens e arquivos</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-prioritized status-badge">PRIORITIZED</span></div>
-                                            <div class="flex items-center justify-center">17/09/24</div>
-                                            <div class="flex items-center justify-center">3 pontos</div>
-
-                                            <div class="flex items-center justify-center">3</div>
-                                            <div class="flex items-center">Definir prazos para download de backups de dados</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-prioritized status-badge">PRIORITIZED</span></div>
-                                            <div class="flex items-center justify-center">17/09/24</div>
-                                            <div class="flex items-center justify-center">5 pontos</div>
-
-                                            <div class="flex items-center justify-center">4</div>
-                                            <div class="flex items-center">Aprimorar a ferramenta de votações para eventos futuros</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-prioritized status-badge">PRIORITIZED</span></div>
-                                            <div class="flex items-center justify-center">17/09/24</div>
-                                            <div class="flex items-center justify-center">5 pontos</div>
-                                            
-                                            <div class="flex items-center justify-center">5</div>
-                                            <div class="flex items-center">Realizar testes de usabilidade com usuários de comunidades</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-prioritized status-badge">PRIORITIZED</span></div>
-                                            <div class="flex items-center justify-center">17/09/24</div>
-                                            <div class="flex items-center justify-center">2 pontos</div>
-                                            
-                                            <div class="flex items-center justify-center">6</div>
-                                            <div class="flex items-center">Desenvolver planos personalizados para comunidades</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-in-progress status-badge">IN PROGRESS</span></div>
-                                            <div class="flex items-center justify-center">05/09/24</div>
-                                            <div class="flex items-center justify-center">5 pontos</div>
-                                            
-                                            <div class="flex items-center justify-center">7</div>
-                                            <div class="flex items-center">Realizar o lançamento dos planos na plataforma</div>
-                                            <div class="flex items-center justify-center">Gabriella Peres</div>
-                                            <div class="flex items-center justify-center"><span class="status-in-progress status-badge">IN PROGRESS</span></div>
-                                            <div class="flex items-center justify-center">09/10/24</div>
-                                            <div class="flex items-center justify-center">2 pontos</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `
-                        },
-                        {
-                            title: 'Métricas de Sucesso',
-                            content: `
-                                <div class="p-6">
-                                    <div class="metrics-grid">
-                                        <div class="metrics-card">
-                                            <h4>Taxa de Adoção de Novos Planos:</h4>
-                                            <p><strong>Métrica:</strong> Número de novos usuários registrados em planos Premium.</p>
-                                            <p><strong>Objetivo:</strong> Aumentar a base de usuários das comunidades em 15% até o final do trimestre.</p>
-                                            <p><strong>Fórmula:</strong> (Número de novos usuários ou comunidades que adotaram o novo plano / Número total de usuários ou comunidades alvo) * 100.</p>
-                                        </div>
-                                        <div class="metrics-card">
-                                            <h4>Retenção de Usuários:</h4>
-                                            <p><strong>Métrica:</strong> Percentual de usuários que permanecem ativos após 30, 60, 90 dias.</p>
-                                            <p><strong>Objetivo:</strong> Manter uma alta taxa de retenção, indicando que os novos planos e funcionalidades estão gerando valor contínuo para os usuários.</p>
-                                            <p><strong>Fórmula:</strong> (Número de usuários que permanecem ativos após [30, 60, 90] dias / Número total de usuários que adotaram o novo plano) * 100.</p>
-                                        </div>
-                                        <div class="metrics-card">
-                                            <h4>Engajamento da Comunidade:</h4>
-                                            <p><strong>Métrica:</strong> Frequência de uso das novas funcionalidades (ex.: número de eventos criados, espaço de armazenamento utilizado).</p>
-                                            <p><strong>Objetivo:</strong> Aumentar o engajamento em 10% comparado ao trimestre anterior.</p>
-                                            <p><strong>Fórmula:</strong> (Número de comunidades que utilizam as novas funcionalidades / Número total de comunidades) * 100.</p>
-                                        </div>
-                                        <div class="metrics-card">
-                                            <h4>Feedback Positivo:</h4>
-                                            <p><strong>Métrica:</strong> Coletar feedback qualitativo e quantitativo sobre as novas funcionalidades.</p>
-                                            <p><strong>Objetivo:</strong> Obter um alto nível de feedback positivo, com uma meta de NPS acima de 80%.</p>
-                                            <p><strong>Fórmula:</strong> (Número de respostas com NPS ≥ 8 / Número total de respostas de NPS) * 100.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            `
-                        }
-                    ]
-                }
-            ];
-            
-            // --- INITIALIZATION ---
-            
-            // Populate Cases Grid
-            const casesGrid = document.getElementById('cases-grid');
-            casesGrid.innerHTML = ''; // Clear existing content
-            portfolioCases.forEach(c => {
-                const card = document.createElement('button');
-                card.className = 'case-card p-6 rounded-lg';
-                card.innerHTML = `
-                    <p class="text-sm accent-text font-semibold mb-2">${c.category}</p>
-                    <h3 class="text-xl font-bold title-text mb-3">${c.title}</h3>
-                    <p class="secondary-text text-sm mb-4">${c.description}</p>
-                    <p class="font-semibold title-text">Resultado: <span class="accent-text">${c.result}</span></p>
-                `;
-                if (c.isCarousel) {
-                    card.addEventListener('click', () => openCaseCarousel(c));
-                }
-                casesGrid.appendChild(card);
-            });
-
-            // --- FUNCTIONS ---
-
-            // Navigation
-            function startSprint(targetTab) {
-                sprintPlanningView.classList.add('fade-out');
-                sprintPlanningView.addEventListener('animationend', () => {
-                    sprintPlanningView.classList.add('hidden');
-                    sprintPlanningView.classList.remove('fade-out');
-                    mainBoardView.classList.remove('hidden');
-                    mainBoardView.classList.add('fade-in');
-                    document.querySelector(`.backlog-item[data-target='${targetTab}']`).click();
-                }, { once: true });
-            }
-
-            function returnToPlanning() {
-                mainBoardView.classList.add('fade-out');
-                mainBoardView.addEventListener('animationend', () => {
-                    mainBoardView.classList.add('hidden');
-                    mainBoardView.classList.remove('fade-out');
-                    sprintPlanningView.classList.remove('hidden');
-                    sprintPlanningView.classList.add('fade-in');
-                }, { once: true });
-            }
-
-            // Sidebar (Backlog) Toggle
-            function toggleMenu() {
-                sprintBacklog.classList.toggle('open');
-            }
-
-            // Case Carousel
-            function openCaseCarousel(caseData) {
-                carouselSlidesContainer.innerHTML = caseData.slides.map((slide, index) => `
-                    <div class="carousel-slide ${index === 0 ? 'active' : ''} p-4">
-                        <h3 class="text-2xl font-bold accent-text mb-4">${slide.title}</h3>
-                        <div>${slide.content}</div>
-                    </div>
-                `).join('');
-                currentSlideIndex = 0;
-                updatePagination();
-                caseCarouselModal.classList.remove('hidden');
-            }
-
-            function closeCaseCarousel() {
-                caseCarouselModal.classList.add('hidden');
-            }
-
-            function showSlide(index) {
-                const slides = carouselSlidesContainer.querySelectorAll('.carousel-slide');
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-                updatePagination();
-            }
-            
-            function updatePagination() {
-                const slides = carouselSlidesContainer.querySelectorAll('.carousel-slide');
-                carouselPagination.textContent = `${currentSlideIndex + 1} / ${slides.length}`;
-            }
-
-            // Email Modal
-            function openEmailModal(e) {
-                e.preventDefault();
-                emailModal.classList.remove('hidden');
-            }
-
-            function closeEmailModal() {
-                emailModal.classList.add('hidden');
-            }
-
-            // Success Modal
-            function openSuccessModal() {
-                successModal.classList.remove('hidden');
-            }
-
-            function closeSuccessModal() {
-                successModal.classList.add('hidden');
-            }
-
-
-            // Theme Management
-            function applyTheme(theme) {
-                body.className = `w-full h-screen theme-${theme}`;
-                sunIcon.classList.toggle('hidden', theme === 'dark');
-                moonIcon.classList.toggle('hidden', theme === 'light');
-                localStorage.setItem('theme', theme);
-            }
-
-            // --- EVENT LISTENERS ---
-            
-            // Main Navigation
-            goToCasesCard.addEventListener('click', () => startSprint('cases'));
-            goToContactCard.addEventListener('click', () => startSprint('contact'));
-            backToPlanningBtn.addEventListener('click', returnToPlanning);
-
-            // Sidebar (Backlog) Navigation
-            menuToggle.addEventListener('click', toggleMenu);
-            closeMenuBtn.addEventListener('click', toggleMenu);
-            
-            backlogLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    const targetId = link.dataset.target;
-                    backlogLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-                    contentPanes.forEach(pane => {
-                        pane.classList.remove('active', 'fade-in');
-                        pane.style.display = 'none';
-                    });
-                    const activePane = document.getElementById(`view-${targetId}`);
-                    if (activePane) {
-                        activePane.style.display = 'block';
-                        activePane.classList.add('active');
-                        void activePane.offsetWidth; // Trigger reflow for animation
-                        activePane.classList.add('fade-in');
-                    }
-                    if (window.innerWidth < 768) { // md breakpoint
-                        toggleMenu();
-                    }
-                });
-            });
-
-            // Case Carousel
-            carouselPrevBtn.addEventListener('click', () => {
-                const slides = carouselSlidesContainer.querySelectorAll('.carousel-slide');
-                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-                showSlide(currentSlideIndex);
-            });
-            carouselNextBtn.addEventListener('click', () => {
-                const slides = carouselSlidesContainer.querySelectorAll('.carousel-slide');
-                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                showSlide(currentSlideIndex);
-            });
-            closeCaseCarouselBtn.addEventListener('click', closeCaseCarousel);
-            caseCarouselBackdrop.addEventListener('click', closeCaseCarousel);
-
-            // Email Modal
-            openEmailModalBtn.addEventListener('click', openEmailModal);
-            emailModalBackdrop.addEventListener('click', closeEmailModal);
-            cancelEmailBtn.addEventListener('click', closeEmailModal);
-            
-            emailForm.addEventListener('submit', async (e) => {
-                e.preventDefault(); 
-
-                const form = e.target;
-                const data = new FormData(form);
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: data,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        closeEmailModal();
-                        openSuccessModal();
-                        form.reset();
-                    } else {
-                        alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
-                    }
-                } catch (error) {
-                    alert('Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.');
-                    console.error('Fetch Error:', error);
-                }
-            });
-
-            // Success Modal
-            closeSuccessModalBtn.addEventListener('click', closeSuccessModal);
-            successModalBackdrop.addEventListener('click', closeSuccessModal);
-
-
-            // Theme Toggle
-            themeToggle.addEventListener('click', () => {
-                const newTheme = body.classList.contains('theme-dark') ? 'light' : 'dark';
-                applyTheme(newTheme);
-            });
-            
-            // --- INITIAL LOAD ---
-
-            // Load saved theme or detect system preference
-            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            applyTheme(savedTheme);
-
-            // Set initial active tab
-            document.querySelector('.backlog-item[data-target="about"]').classList.add('active');
-            document.getElementById('view-about').classList.add('active');
-        });
-    </script>
-</body>
-</html>
+    <div id="main-board" class="hidden h-screen relative md:grid
