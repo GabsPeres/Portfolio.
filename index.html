@@ -100,8 +100,6 @@
         .theme-dark .contact-card { background-color: var(--surface-dark); border: 1px solid var(--border-dark); }
         .theme-light .contact-card { background-color: var(--surface-light); border: 1px solid var(--border-light); }
 
-        .cropper-container { max-height: 60vh; }
-
         .sprint-button {
             transition: all 0.3s ease;
         }
@@ -235,7 +233,7 @@
             background-color: var(--line-color);
         }
         .opp-tree-group.sub-group > .opp-tree-branch::before {
-             content: none;
+              content: none;
         }
         .opp-tree-group.sub-group::after {
             content: '';
@@ -632,7 +630,7 @@
 
     <div id="sprint-planning" class="h-full flex flex-col justify-center items-center text-center p-6 fade-in">
         <div class="max-w-3xl">
-            <h1 class="text-4xl md:text-5xl font-black mb-4 title-text">Bem-vindo ao meu Sprint.</h1>
+            <h1 class="text-4xl md:text-5xl font-black mb-4 title-text">Bem-vindo a minha Sprint.</h1>
             <p class="text-lg secondary-text mb-2">O objetivo desta Sprint é simples:</p>
             <p class="text-xl font-bold accent-text mb-12">"Descobrir o valor que posso agregar ao seu time em 2 minutos."</p>
             
@@ -723,35 +721,29 @@
             <div id="view-cases" class="content-view">
                 <h2 class="text-3xl font-bold title-text mb-8">Sprints de Sucesso (Incrementos)</h2>
                 <div id="cases-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <button class="case-card p-6 rounded-lg">
-                        <p class="text-sm accent-text font-semibold mb-2">Product Management</p>
-                        <h3 class="text-xl font-bold title-text mb-3">Slack para Comunidades</h3>
-                        <p class="secondary-text text-sm mb-4">Análise de mercado e riscos para criar uma nova vertical no Slack, focada em comunidades, com planos e features personalizadas.</p>
-                        <p class="font-semibold title-text">Resultado: <span class="accent-text">Aumento da aquisição em planos premium.</span></p>
-                    </button>
-                </div>
+                    </div>
             </div>
 
             <div id="view-contact" class="content-view flex flex-col justify-center items-center h-full p-6 text-center">
                  <div class="contact-card w-full max-w-md rounded-lg shadow-2xl p-8 mx-auto">
-                    <div class="mx-auto mb-6 block w-24 h-24">
-                        <img id="contact-view-img" src="./img/1738072155515.jpg" alt="Foto de perfil" class="w-24 h-24 rounded-full object-cover border-2 profile-pic-border">
-                    </div>
-                     <div class="space-y-4 text-left">
-                         <a href="#" id="open-email-modal" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
-                             <i data-lucide="mail" class="w-6 h-6 mr-4 accent-text"></i>
-                             <span class="secondary-text text-base">gabriellaradicchi@hotmail.com</span>
-                         </a>
-                         <a href="https://www.linkedin.com/in/gabriellaradicchi/" target="_blank" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
-                             <i data-lucide="linkedin" class="w-6 h-6 mr-4 accent-text"></i>
-                             <span class="secondary-text text-base">/in/gabriellaradicchi/</span>
-                         </a>
-                         <a href="https://wa.me/5531992066291" target="_blank" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
-                             <i data-lucide="phone" class="w-6 h-6 mr-4 accent-text"></i>
-                             <span class="secondary-text text-base">+55 (31) 99206-6291</span>
-                         </a>
-                     </div>
-                </div>
+                       <div class="mx-auto mb-6 w-24 h-24">
+                           <img id="contact-view-img" src="./img/1738072155515.jpg" alt="Foto de perfil" class="w-24 h-24 rounded-full object-cover border-2 profile-pic-border">
+                       </div>
+                       <div class="space-y-4 text-left">
+                           <a href="#" id="open-email-modal" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
+                               <i data-lucide="mail" class="w-6 h-6 mr-4 accent-text"></i>
+                               <span class="secondary-text text-base">gabriellaradicchi@hotmail.com</span>
+                           </a>
+                           <a href="https://www.linkedin.com/in/gabriellaradicchi/" target="_blank" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
+                               <i data-lucide="linkedin" class="w-6 h-6 mr-4 accent-text"></i>
+                               <span class="secondary-text text-base">/in/gabriellaradicchi/</span>
+                           </a>
+                           <a href="https://wa.me/5531992066291" target="_blank" class="flex items-center p-3 rounded-md hover-bg-surface transition-colors">
+                               <i data-lucide="phone" class="w-6 h-6 mr-4 accent-text"></i>
+                               <span class="secondary-text text-base">+55 (31) 99206-6291</span>
+                           </a>
+                       </div>
+                 </div>
             </div>
         </main>
     </div>
@@ -840,12 +832,6 @@
             const closeMenuBtn = document.getElementById('close-menu');
             const backlogLinks = document.querySelectorAll('.backlog-item');
             const contentPanes = document.querySelectorAll('.content-view');
-
-            // Imagens de Perfil (agora fixas)
-            const profilePicImg = document.getElementById('profile-pic-img');
-            const contactViewImg = document.getElementById('contact-view-img');
-            // A URL da imagem principal (da seção "about") será usada para a imagem menor (do "contato")
-            contactViewImg.src = profilePicImg.src;
             
             // Case Carousel
             const caseCarouselModal = document.getElementById('case-carousel-modal');
@@ -978,150 +964,151 @@
                                     </div>
                                 </div>
                             ` 
-                    },
-                    { title: 'Perfil de Usuário com Maior Potencial', content: '<p class="text-center p-4 border rounded-md secondary-text">Líder de Comunidade que organiza eventos voltado para o empreendedorismo e inovação, promovendo o networking entre os integrantes. Ele precisa de uma plataforma que o ajude na organização antes, durante e pós evento, para gerar engajamento entre os integrantes. Essa pessoa pode ser um parceiro que irá indicar a plataforma para sua rede de conexões.</p>' },
-                    { 
-                        title: 'Mapeamento de Dores e Motivações',
-                        content: `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm secondary-text">
-                                <div class="risk-quadrant">
-                                    <h4>Dores</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Definir datas e assuntos a serem abordados:</strong> Necessidade de uma forma eficiente para planejar eventos e discussões.</li>
-                                        <li><strong>Engajar os integrantes da comunidade:</strong> Dificuldade em manter os membros ativos e envolvidos.</li>
-                                        <li><strong>Buscar novos integrantes para a comunidade:</strong> Desafio em expandir a comunidade e atrair novos membros.</li>
-                                        <li><strong>Definir e distribuir tarefas entre os organizadores:</strong> Necessidade de um sistema para gerenciar responsabilidades dentro da equipe.</li>
-                                        <li><strong>Acompanhar o progresso das tarefas:</strong> Falta de um mecanismo eficaz para monitorar o avanço das tarefas atribuídas.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Motivações</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Organização eficiente:</strong> Um lugar onde os arquivos e tarefas ficam organizados para uma visualização clara e acessível.</li>
-                                        <li><strong>Comunicação assertiva:</strong> Ter uma comunicação clara e objetiva com todos os integrantes da comunidade.</li>
-                                        <li><strong>Planejamento dos próximos eventos:</strong> Definição de como serão os próximos eventos, com um espaço dedicado para planejá-los.</li>
-                                        <li><strong>Colaboração Contínua:</strong> Um lugar onde os integrantes da comunidade podem manter contato e obter colaboração quando necessário.</li>
-                                        <li><strong>Facilidade de Acesso e Integração:</strong> Uma plataforma que se integre com outras ferramentas e facilite a organização da comunidade de forma fluida.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `
-                    },
-                    { 
-                        title: 'Mapeamento de Riscos', 
-                        content: `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm secondary-text">
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Valor</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Desvalorização da proposta:</strong> Comunidades podem não ver valor suficiente nas funcionalidades oferecidas em comparação com alternativas gratuitas.</li>
-                                        <li><strong>Falta de diferenciação:</strong> Slack pode não se destacar o suficiente frente aos concorrentes como Discord e WhatsApp.</li>
-                                        <li><strong>Preço inadequado:</strong> Comunidades podem não estar dispostas a pagar pelos planos propostos.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Negócio</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Canibalização de outros segmentos:</strong> Planos para comunidades podem atrair clientes que já usam planos empresariais, reduzindo receita.</li>
-                                        <li><strong>Baixa rentabilidade:</strong> O novo segmento pode não gerar lucro suficiente para justificar os investimentos.</li>
-                                        <li><strong>Dificuldade em escalar:</strong> O crescimento do novo segmento pode ser menor do que o esperado.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Usabilidade</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Complexidade da plataforma:</strong> Comunidades podem achar o Slack complicado em comparação com alternativas mais simples.</li>
-                                        <li><strong>Curva de aprendizado alta:</strong> A adoção pode ser lenta devido à dificuldade de uso para novos usuários.</li>
-                                        <li><strong>Falta de suporte:</strong> Se o suporte não for adequado, usuários podem abandonar a plataforma.</li>
-                                    </ul>
-                                </div>
-                                <div class="risk-quadrant">
-                                    <h4>Riscos de Viabilidade</h4>
-                                    <ul class="list-disc space-y-2">
-                                        <li><strong>Desafios técnicos:</strong> Dificuldades em implementar e integrar novas funcionalidades específicas para comunidades.</li>
-                                        <li><strong>Escalabilidade:</strong> A infraestrutura pode não suportar o aumento de usuários e funcionalidades sem comprometer o desempenho.</li>
-                                        <li><strong>Concorrência forte:</strong> Produtos já estabelecidos como Discord podem dificultar a entrada do Slack nesse mercado.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `
-                    },
-                    {
-                        title: 'Árvore de Oportunidades',
-                        content: `
-                            <div class="opp-tree-wrapper">
-                                <div class="flex justify-center mb-8 relative">
-                                    <div class="opp-tree-item opp-tree-outcome">
-                                        <h5>Outcome</h5>
-                                        <p>Criar uma nova vertical do Slack focada em atender as necessidades específicas de comunidades e pequenos grupos informais.</p>
+                        },
+                        { title: 'Perfil de Usuário com Maior Potencial', content: '<p class="text-center p-4 border rounded-md secondary-text">Líder de Comunidade que organiza eventos voltado para o empreendedorismo e inovação, promovendo o networking entre os integrantes. Ele precisa de uma plataforma que o ajude na organização antes, durante e pós evento, para gerar engajamento entre os integrantes. Essa pessoa pode ser um parceiro que irá indicar a plataforma para sua rede de conexões.</p>' },
+                        { 
+                            title: 'Mapeamento de Dores e Motivações',
+                            content: `
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm secondary-text">
+                                    <div class="risk-quadrant">
+                                        <h4>Dores</h4>
+                                        <ul class="list-disc space-y-2">
+                                            <li><strong>Definir datas e assuntos a serem abordados:</strong> Necessidade de uma forma eficiente para planejar eventos e discussões.</li>
+                                            <li><strong>Engajar os integrantes da comunidade:</strong> Dificuldade em manter os membros ativos e envolvidos.</li>
+                                            <li><strong>Buscar novos integrantes para a comunidade:</strong> Desafio em expandir a comunidade e atrair novos membros.</li>
+                                            <li><strong>Definir e distribuir tarefas entre os organizadores:</strong> Necessidade de um sistema para gerenciar responsabilidades dentro da equipe.</li>
+                                            <li><strong>Acompanhar o progresso das tarefas:</strong> Falta de um mecanismo eficaz para monitorar o avanço das tarefas atribuídas.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="risk-quadrant">
+                                        <h4>Motivações</h4>
+                                        <ul class="list-disc space-y-2">
+                                            <li><strong>Organização eficiente:</strong> Um lugar onde os arquivos e tarefas ficam organizados para uma visualização clara e acessível.</li>
+                                            <li><strong>Comunicação assertiva:</strong> Ter uma comunicação clara e objetiva com todos os integrantes da comunidade.</li>
+                                            <li><strong>Planejamento dos próximos eventos:</strong> Definição de como serão os próximos eventos, com um espaço dedicado para planejá-los.</li>
+                                            <li><strong>Colaboração Contínua:</strong> Um lugar onde os integrantes da comunidade podem manter contato e obter colaboração quando necessário.</li>
+                                            <li><strong>Facilidade de Acesso e Integração:</strong> Uma plataforma que se integre com outras ferramentas e facilite a organização da comunidade de forma fluida.</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="opp-tree-group main-group">
-                                    <div class="opp-tree-branch" style="--line-color: #ec4899;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#ec4899]">Opportunity</h5>
-                                            <p>Plano personalizado</p>
+                            `
+                        },
+                        { 
+                            title: 'Mapeamento de Riscos', 
+                            content: `
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm secondary-text">
+                                    <div class="risk-quadrant">
+                                        <h4>Riscos de Valor</h4>
+                                        <ul class="list-disc space-y-2">
+                                            <li><strong>Desvalorização da proposta:</strong> Comunidades podem não ver valor suficiente nas funcionalidades oferecidas em comparação com alternativas gratuitas.</li>
+                                            <li><strong>Falta de diferenciação:</strong> Slack pode não se destacar o suficiente frente aos concorrentes como Discord e WhatsApp.</li>
+                                            <li><strong>Preço inadequado:</strong> Comunidades podem não estar dispostas a pagar pelos planos propostos.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="risk-quadrant">
+                                        <h4>Riscos de Negócio</h4>
+                                        <ul class="list-disc space-y-2">
+                                            <li><strong>Canibalização de outros segmentos:</strong> Planos para comunidades podem atrair clientes que já usam planos empresariais, reduzindo receita.</li>
+                                            <li><strong>Baixa rentabilidade:</strong> O novo segmento pode não gerar lucro suficiente para justificar os investimentos.</li>
+                                            <li><strong>Dificuldade em escalar:</strong> O crescimento do novo segmento pode ser menor do que o esperado.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="risk-quadrant">
+                                        <h4>Riscos de Usabilidade</h4>
+                                        <ul class="list-disc space-y-2">
+                                            <li><strong>Complexidade da plataforma:</strong> Comunidades podem achar o Slack complicado em comparação com alternativas mais simples.</li>
+                                            <li><strong>Curva de aprendizado alta:</strong> A adoção pode ser lenta devido à dificuldade de uso para novos usuários.</li>
+                                            <li><strong>Falta de suporte:</strong> Se o suporte não for adequado, usuários podem abandonar a plataforma.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="risk-quadrant">
+                                        <h4>Riscos de Viabilidade</h4>
+                                        <ul class="list-disc space-y-2">
+                                            <li><strong>Desafios técnicos:</strong> Dificuldades em implementar e integrar novas funcionalidades específicas para comunidades.</li>
+                                            <li><strong>Escalabilidade:</strong> A infraestrutura pode não suportar o aumento de usuários e funcionalidades sem comprometer o desempenho.</li>
+                                            <li><strong>Concorrência forte:</strong> Produtos já estabelecidos como Discord podem dificultar a entrada do Slack nesse mercado.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            `
+                        },
+                        {
+                            title: 'Árvore de Oportunidades',
+                            content: `
+                                <div class="opp-tree-wrapper">
+                                    <div class="flex justify-center mb-8 relative">
+                                        <div class="opp-tree-item opp-tree-outcome">
+                                            <h5>Outcome</h5>
+                                            <p>Criar uma nova vertical do Slack focada em atender as necessidades específicas de comunidades e pequenos grupos informais.</p>
                                         </div>
+                                    </div>
+                                    <div class="opp-tree-group main-group">
                                         <div class="opp-tree-branch" style="--line-color: #ec4899;">
                                             <div class="opp-tree-item">
-                                                <h5 class="text-[#ec4899]">Solution</h5>
-                                                <p>Personalizar planos com itens existentes/novos que fazem mais sentido para as Comunidades</p>
+                                                <h5 class="text-[#ec4899]">Opportunity</h5>
+                                                <p>Plano personalizado</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="opp-tree-branch" style="--line-color: #3b82f6;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#3b82f6]">Opportunity</h5>
-                                            <p>Espaço de Armazenamento e Mensagens</p>
-                                        </div>
-                                        <div class="opp-tree-group sub-group" style="--line-color: #3b82f6;">
-                                            <div class="opp-tree-branch" style="--line-color: #3b82f6;">
+                                            <div class="opp-tree-branch" style="--line-color: #ec4899;">
                                                 <div class="opp-tree-item">
-                                                    <h5 class="text-[#3b82f6]">Solution</h5>
-                                                    <p>Aumentar o espaço de armazenamento de mensagens</p>
+                                                    <h5 class="text-[#ec4899]">Solution</h5>
+                                                    <p>Personalizar planos com itens existentes/novos que fazem mais sentido para as Comunidades</p>
                                                 </div>
                                             </div>
-                                            <div class="opp-tree-branch" style="--line-color: #3b82f6;">
-                                                <div class="opp-tree-item">
-                                                    <h5 class="text-[#3b82f6]">Solution</h5>
-                                                    <p>Definir um prazo para download do backup de mensagens e arquivos</p>
+                                        </div>
+                                        <div class="opp-tree-branch" style="--line-color: #3b82f6;">
+                                            <div class="opp-tree-item">
+                                                <h5 class="text-[#3b82f6]">Opportunity</h5>
+                                                <p>Espaço de Armazenamento e Mensagens</p>
+                                            </div>
+                                            <div class="opp-tree-group sub-group" style="--line-color: #3b82f6;">
+                                                <div class="opp-tree-branch" style="--line-color: #3b82f6;">
+                                                    <div class="opp-tree-item">
+                                                        <h5 class="text-[#3b82f6]">Solution</h5>
+                                                        <p>Aumentar o espaço de armazenamento de mensagens</p>
+                                                    </div>
                                                 </div>
                                                 <div class="opp-tree-branch" style="--line-color: #3b82f6;">
                                                     <div class="opp-tree-item">
-                                                        <h5 class="text-[#3b82f6]">Experiment</h5>
-                                                        <p>Liberar essa funcionalidade para um grupo de pessoas e coletar feedbacks</p>
+                                                        <h5 class="text-[#3b82f6]">Solution</h5>
+                                                        <p>Definir um prazo para download do backup de mensagens e arquivos</p>
+                                                    </div>
+                                                    <div class="opp-tree-branch" style="--line-color: #3b82f6;">
+                                                        <div class="opp-tree-item">
+                                                            <h5 class="text-[#3b82f6]">Experiment</h5>
+                                                            <p>Liberar essa funcionalidade para um grupo de pessoas e coletar feedbacks</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="opp-tree-branch" style="--line-color: #10b981;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#10b981]">Opportunity</h5>
-                                            <p>Organização de discussões</p>
-                                        </div>
                                         <div class="opp-tree-branch" style="--line-color: #10b981;">
                                             <div class="opp-tree-item">
-                                                <h5 class="text-[#10b981]">Solution</h5>
-                                                <p>Aprimorar a plataforma para permitir votações sobre eventos futuros</p>
+                                                <h5 class="text-[#10b981]">Opportunity</h5>
+                                                <p>Organização de discussões</p>
                                             </div>
                                             <div class="opp-tree-branch" style="--line-color: #10b981;">
                                                 <div class="opp-tree-item">
-                                                    <h5 class="text-[#10b981]">Experiment</h5>
-                                                    <p>Realizar teste de usabilidade com usuários de comunidades para validar a funcionalidade</p>
+                                                    <h5 class="text-[#10b981]">Solution</h5>
+                                                    <p>Aprimorar a plataforma para permitir votações sobre eventos futuros</p>
+                                                </div>
+                                                <div class="opp-tree-branch" style="--line-color: #10b981;">
+                                                    <div class="opp-tree-item">
+                                                        <h5 class="text-[#10b981]">Experiment</h5>
+                                                        <p>Realizar teste de usabilidade com usuários de comunidades para validar a funcionalidade</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="opp-tree-branch" style="--line-color: #8b5cf6;">
-                                        <div class="opp-tree-item">
-                                            <h5 class="text-[#8b5cf6]">Opportunity</h5>
-                                            <p>Melhorias em Videoconferências</p>
-                                        </div>
                                         <div class="opp-tree-branch" style="--line-color: #8b5cf6;">
                                             <div class="opp-tree-item">
-                                                <h5 class="text-[#8b5cf6]">Solution</h5>
-                                                <p>Aprimorar videochamadas para torná-las mais assertivas e adequadas para Comunidades</p>
+                                                <h5 class="text-[#8b5cf6]">Opportunity</h5>
+                                                <p>Melhorias em Videoconferências</p>
+                                            </div>
+                                            <div class="opp-tree-branch" style="--line-color: #8b5cf6;">
+                                                <div class="opp-tree-item">
+                                                    <h5 class="text-[#8b5cf6]">Solution</h5>
+                                                    <p>Aprimorar videochamadas para torná-las mais assertivas e adequadas para Comunidades</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1178,7 +1165,6 @@
                                                     <p class="text-xs">Introduzir e testar novas funcionalidades de organização de eventos e votações</p>
                                                 </div>
                                                 <div></div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -1576,7 +1562,6 @@
                 successModal.classList.add('hidden');
             }
 
-
             // Theme Management
             function applyTheme(theme) {
                 body.className = `w-full h-screen theme-${theme}`;
@@ -1638,7 +1623,7 @@
             cancelEmailBtn.addEventListener('click', closeEmailModal);
             
             emailForm.addEventListener('submit', async (e) => {
-                e.preventDefault(); 
+                e.preventDefault();
 
                 const form = e.target;
                 const data = new FormData(form);
@@ -1668,7 +1653,6 @@
             // Success Modal
             closeSuccessModalBtn.addEventListener('click', closeSuccessModal);
             successModalBackdrop.addEventListener('click', closeSuccessModal);
-
 
             // Theme Toggle
             themeToggle.addEventListener('click', () => {
